@@ -1,4 +1,5 @@
 import com.controller.accountController;
+import com.service.accountService;
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -6,8 +7,8 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 public class test {
     @Test
     public void test(){
-        ApplicationContext ac=new ClassPathXmlApplicationContext("annocaction.xml");
-        accountController accountController=ac.getBean(com.controller.accountController.class);
-        accountController.select();
+        ApplicationContext ac=new ClassPathXmlApplicationContext("bean.xml");
+        accountService accountService=ac.getBean(com.service.accountService.class);
+        accountService.transfer("aaa","bbb",100f);
     }
 }
